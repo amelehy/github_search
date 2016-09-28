@@ -3,7 +3,7 @@
   $(document).ready(function() {
     $('#github-data').DataTable({
       "ajax": {
-        "url": "http://localhost/lexumo/get_repositories.php?languages=cpp;c",
+        "url": "get_repositories.php?languages=cpp;c",
         "dataSrc": function(data){
           return data.payload;
         }
