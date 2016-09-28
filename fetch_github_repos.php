@@ -45,7 +45,7 @@ class FetchGithubRepos extends APIBase{
     if($errorsFound){
       return array(
         'error_message' => $errorsFound['message'], 
-        'error_code' => $errorsFound['code']
+        'error_code' => $errorsFound['status_code']
       );
     } else{
       return array_map(function($repo){
@@ -63,11 +63,11 @@ class FetchGithubRepos extends APIBase{
   * Check if the HTTP status code was anything but 200
   */
   private function __errorsPresent($responseData){
-    if($responseData['code'] === 200){
+    if($responseData['status_code'] === 200){
       return false;
     } else{
       return array(
-        'code' => $responseData['code'],
+        'status_code' => $responseData['status_code'],
         'message' => 'Something went wrong. Please try again later.'
       );
     }

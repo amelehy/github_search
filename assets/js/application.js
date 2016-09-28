@@ -1,6 +1,5 @@
 (function($){
-
-  $(document).ready(function() {
+  $(document).ready(function(){
     $('#github-data').DataTable({
       "ajax": {
         "url": "get_repositories.php?languages=cpp;c",
@@ -9,11 +8,11 @@
         }
       },
       "pageLength": 20,
-      "columns": [
-        { "data": "repository_id" },
-        { "data": "repository_short_name" },
-        { "data": "repository_full_name" },
-        { "data": "language" },
+      "columns":[
+        {"data": "repository_id"},
+        {"data": "repository_short_name"},
+        {"data": "repository_full_name"},
+        {"data": "language"},
         { 
           "data": "url",
           "title": "Order No.",
@@ -24,5 +23,4 @@
       ]
     });
   });
-
 })(jQuery);

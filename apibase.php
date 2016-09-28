@@ -16,7 +16,7 @@ class APIBase {
     $response_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
     $final = array(
-      'code' => $response_code,
+      'status_code' => $response_code,
       'payload' => $result
     );
     return $final;
@@ -35,7 +35,7 @@ class APIBase {
     $response_code = curl_getinfo($ch);
     curl_close($ch);
     $final = array(
-      'code' => $response_code,
+      'status_code' => $response_code,
       'headers' => $this->__getHeadersFromCurlResponse($result)
     );
     return $final;
